@@ -357,7 +357,7 @@ public class PenteGB extends JPanel implements MouseListener {
 		
 			for(int row = 0; row < NUM_SQUARES_SIDE; row++) {
 				
-				for(int col = 0; col < NUM_SQUARES_SIDE; col++) {
+				for(int col = 0; col < NUM_SQUARES_SIDE; col++) { 
 					
 					
 					boolean squareClicked = gameBoard[row][col].isClicked(clickX, clickY);
@@ -515,19 +515,6 @@ public class PenteGB extends JPanel implements MouseListener {
 						
 			}
 		}
-		
-		/*
-		checkForCaptures(r,c,pt, 0, -1);
-		
-		checkForCaptures(r,c,pt, 1, 0);
-		checkForCaptures(r,c,pt, -1, 0);
-		
-		checkForCaptures(r,c,pt, -1, 1);
-		checkForCaptures(r,c,pt, -1, -1);
-		
-		checkForCaptures(r,c,pt, 1, 1);
-		checkForCaptures(r,c,pt, 1, -1);
-		*/
 			
 	}
 	
