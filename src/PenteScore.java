@@ -157,6 +157,7 @@ public class PenteScore extends JPanel implements ActionListener{
 		
 		resetButton.addActionListener(this);
 		
+		
 		this.add(resetButton);
 		
 		JPanel whoseTurn = new JPanel();

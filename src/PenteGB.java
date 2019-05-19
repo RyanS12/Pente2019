@@ -18,7 +18,7 @@ public class PenteGB extends JPanel implements MouseListener {
 	public static final int PLAYER1_TURN = -1;
 	public static final int PLAYER2_TURN = 1;
 	public static final int MAX_CAPTURES = 5;
-	public static final int SLEEP_TIME = 500;
+	public static final int SLEEP_TIME = 300;
 	
 	private int bWidth, bHeight;
 	
@@ -294,7 +294,7 @@ public class PenteGB extends JPanel implements MouseListener {
 		} catch(ArrayIndexOutOfBoundsException e) {
 			
 			
-			System.out.println(e.toString());			
+			//System.out.println(e.toString());			
 			
 			return false;
 			
@@ -465,6 +465,7 @@ public class PenteGB extends JPanel implements MouseListener {
 			checkForWin(playerTurn);
 			
 			if(!gameOver) {
+				
 				this.changePlayerTurn();
 				
 				checkForComputerMove(playerTurn);
@@ -492,6 +493,29 @@ public class PenteGB extends JPanel implements MouseListener {
 
 			} else {
 				darkStoneMove2Taken = true;
+			}
+			
+		}
+		
+		
+		
+		
+		return dsp;
+		
+	}
+	
+	public boolean darkSquareProblemComputerMoveList(int r, int c) {
+		
+		boolean dsp = false;
+		
+		if(!darkStoneMove2Taken && playerTurn == BLACKSTONE) {
+			
+			if(r >= INNER_START && r <= INNER_END && c >= INNER_START && c <= INNER_END) {
+			
+				dsp = true;
+
+			} else {
+				//darkStoneMove2Taken = true;
 			}
 			
 		}
@@ -552,7 +576,7 @@ public class PenteGB extends JPanel implements MouseListener {
 		} catch(ArrayIndexOutOfBoundsException e) {
 			
 			
-			System.out.println(e.toString());			
+			//System.out.println(e.toString());			
 			
 			return ;
 			
@@ -674,6 +698,15 @@ public class PenteGB extends JPanel implements MouseListener {
 		return gameBoard;
 	}
 	
+	public boolean getDarkStoneMove2Taken() {
+		return this.darkStoneMove2Taken;
+	}
+	
+	public void setDarkStoneMove2Taken(boolean taken) {
+		
+		this.darkStoneMove2Taken = taken;
+		
+	}
 	
 	
 	
